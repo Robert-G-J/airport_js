@@ -12,7 +12,7 @@ describe("Airport", function() {
 
   it("can tell a plane to take-off from an airport", function(){
     plane.land(airport);
-    plane.takeoff(airport);
+    plane.takeoff();
     expect(airport.planes()).not.toContain(plane);
   });
 

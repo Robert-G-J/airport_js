@@ -12,7 +12,7 @@ function Airport() {
   };
 
   Airport.prototype.clearForTakeoff = function(plane) {
-    this._hangar = [];
+    _hangar = [];
   };
 
 }
