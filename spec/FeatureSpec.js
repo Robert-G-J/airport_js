@@ -7,5 +7,5 @@ describe("Airport", function() {
     plane.land(airport);
     expect(airport.planes()).toContain(plane);
   });
-
+  
 });
