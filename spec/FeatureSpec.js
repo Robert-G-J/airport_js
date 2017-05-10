@@ -27,4 +27,9 @@ describe("FEATURE TEST: An Airport", function() {
     expect(airport.planes()).not.toContain(plane);
   });
 
+  it("can stop a plane from landing", function() {
+    spyOn(airport, "isStormy").and.returnValue(true);
+    expect(function(){ plane.land(airport); }).toThrowError("Weather is British, do one");
+  });
+
 });
