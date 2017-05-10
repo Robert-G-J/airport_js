@@ -1,8 +1,14 @@
-function Airport() {
-  var array = [];
+/*jshint strict:false*/
 
-  this.planes = function() {
-    return array;
+function Airport() {
+  var hangar = [];
+
+  Airport.prototype.planes = function() {
+    return hangar;
+  };
+
+  Airport.prototype.clearForLanding = function(plane) {
+    hangar.push(plane);
   };
 
 }
