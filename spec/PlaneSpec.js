@@ -21,5 +21,4 @@ describe("A plane", function() {
       expect(airport.clearForTakeoff).toHaveBeenCalled();
     });
   });
-
 });

@@ -32,4 +32,8 @@ describe("FEATURE TEST: An Airport", function() {
     expect(function(){ plane.land(airport); }).toThrowError("Weather is British, do one");
   });
 
+  it("can prevent landing when airport is full", function() {
+    plane.land(airport);
+    expect(function(){ plane.land(airport); }).toThrowError("Plane party is full- come back next week");
+  });
 });
