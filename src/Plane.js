@@ -4,4 +4,8 @@ function Plane() {
     airport.clearForLanding(this);
   };
 
+  Plane.prototype.takeoff = function(airport) {
+    airport.clearForTakeoff();
+  };
+
 }
