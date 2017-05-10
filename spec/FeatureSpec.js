@@ -1,4 +1,4 @@
-describe("Airport", function() {
+describe("FEATURE TEST: An Airport", function() {
 
   var plane = new Plane();
   var airport = new Airport();
@@ -8,12 +8,23 @@ describe("Airport", function() {
     expect(airport.planes()).toContain(plane);
   });
 
-});
-
   it("can tell a plane to take-off from an airport", function(){
     plane.land(airport);
     plane.takeoff();
     expect(airport.planes()).not.toContain(plane);
   });
 
-}
+  it("can stop a plane from taking off", function() {
+    plane.land(airport);
+    spyOn(airport, "isStormy").and.returnValue(true);
+    expect(function(){ plane.takeoff(); }.toThrowError("Weather is shite; flights grounded");
+  }) ;
+
+  it("allows a plane to takeoff in good weather", function() {
+    plane.land(airport);
+    spyOn(airport, "isStormy").and.returnValue(false);
+    plane.takeoff();
+    expect(airport.planes()).not.toContain(plane);
+  });
+
+});
