@@ -18,4 +18,9 @@ describe('UNIT TEST: An Airport', function() {
     airport.clearForTakeoff(plane);
     expect(airport.planes()).toEqual([]);
   });
+
+  it('can find out if it is stormy', function() {
+    expect(airport.isStormy()).toBeFalsy();
+  });
+
 });
